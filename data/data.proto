@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "gprc-sample/data";
+
+service EmailService{
+  rpc SendMail(EmailData) returns (Message) {}
+}
+
+
+message EmailData{
+  string Email = 1;
+  string Subject = 2;
+  string Body = 3;
+}
+
+
+message Message{
+  string ResponseText = 1;
+  int32 Status = 2;
+}
