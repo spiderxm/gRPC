@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-option go_package = "gprc-sample/data";
+option go_package = "grpc-sample/data";
 
 service EmailService{
   rpc SendMail(EmailData) returns (Message) {}
+  rpc SendBulkEmail(stream EmailData) returns (Message){}
 }
 
 
